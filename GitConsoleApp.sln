@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitConsoleApp", "GitConsoleApp\GitConsoleApp.csproj", "{FD10C0C3-28B7-4C5E-B018-BE229CE30207}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTimer", "WpfTimer\WpfTimer.csproj", "{39FA30DC-1AEB-4EA6-B447-689EF23E2FF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{FD10C0C3-28B7-4C5E-B018-BE229CE30207}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD10C0C3-28B7-4C5E-B018-BE229CE30207}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD10C0C3-28B7-4C5E-B018-BE229CE30207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39FA30DC-1AEB-4EA6-B447-689EF23E2FF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39FA30DC-1AEB-4EA6-B447-689EF23E2FF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39FA30DC-1AEB-4EA6-B447-689EF23E2FF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39FA30DC-1AEB-4EA6-B447-689EF23E2FF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
