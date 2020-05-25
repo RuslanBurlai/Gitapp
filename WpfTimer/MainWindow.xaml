@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTimer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Таймер" Height="250" Width="400">
+    <StackPanel Background="Azure">
+        <Label x:Name="lblForTime" FontSize="40" HorizontalAlignment="Center"/>
+        <TextBox x:Name="txtBoxForInputTime" Width="100" Height="30" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+        <Button x:Name="btnOff" Height="30" Width="100" Margin="0,0,0,5" Content="Выключить"/>
+        <Label x:Name="lblForRemainingTime" FontSize="40" HorizontalAlignment="Center"/>
+    </StackPanel>
 </Window>

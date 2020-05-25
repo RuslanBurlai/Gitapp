@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.ComponentModel;
+using System.Diagnostics;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace WpfTimer
 {
@@ -23,6 +17,41 @@ namespace WpfTimer
         public MainWindow()
         {
             InitializeComponent();
+            TimeNow();
+            btnOff.Click += BtnOffClick;
+        }
+
+        private void BtnOffClick(object sender, RoutedEventArgs e)
+        {
+            TimeSpan showTimeOff = new TimeSpan(0, 0, 0);
+            DateTime timeOff = DateTime.Parse(txtBoxForInputTime.Text);
+            TimeSpan oneSecond = new TimeSpan(0,0,1);
+            DispatcherTimer _offTimer = new DispatcherTimer(TimeSpan.FromMilliseconds(1.0f), DispatcherPriority.Normal, delegate
+            {
+                try
+                {
+                    showTimeOff = timeOff - DateTime.Now + oneSecond;
+                    lblForRemainingTime.Content = DateTime.Parse(showTimeOff.ToString()).ToString("HH:mm:ss");
+                }
+                catch (Exception)
+                {
+                    ComputerOff();
+                }
+            }, Dispatcher);
+        }
+
+        private void ComputerOff()
+        {
+            lblForRemainingTime.Content = "shutdown.exe";
+            //Process.Start("shutdown.exe", "-h");
+        }
+
+        private void TimeNow()
+        {
+            DispatcherTimer showTimeNow = new DispatcherTimer(TimeSpan.FromMilliseconds(0.5f), DispatcherPriority.Normal, delegate
+             {
+                 lblForTime.Content = DateTime.Now.ToString("HH:mm:ss");
+             }, Dispatcher);
         }
     }
 }
